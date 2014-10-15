@@ -3,12 +3,13 @@
 
   "name": "View Devices in New Tab",
   "description": "Changes the new tab page to be a list of tabs open on your other devices.",
-  "version": "0.1",
+  "version": "1.0",
 
   "permissions": [
     "sessions",
     "tabs"
   ],
+
   "chrome_url_overrides" : {
     "newtab": "newtab.html"
   }
