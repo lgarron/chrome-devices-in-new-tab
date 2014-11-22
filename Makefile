@@ -1,6 +1,12 @@
 
-chrome-devices-in-new-tab.zip:
-	zip chrome-devices-in-new-tab.zip manifest.json newtab.css newtab.html newtab.js
+ZIP = chrome-devices-in-new-tab.zip
+SOURCE_FILES = manifest.json newtab.css newtab.html newtab.js
 
+# Target name is expand to assist zsh autocomplete.
+chrome-devices-in-new-tab.zip: $(SOURCE_FILES)
+	rm $(ZIP)
+	zip $(ZIP) $(SOURCE_FILES)
+
+.PHONY: clean
 clean:
-	rm -rf chrome-devices-in-new-tab.zip
+	rm $(ZIP)
