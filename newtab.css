@@ -39,12 +39,17 @@ div {
   border-bottom: 1px solid #888;
 }
 
-.session {
+.sessions {
   margin: 0px -20px 0px -20px;
   padding: 0.5em 20px 0.5em;
-
   max-height: 320px;
   overflow-y: auto;
+}
+
+.session + .session {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 a.link {

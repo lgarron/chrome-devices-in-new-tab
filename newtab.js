@@ -1,6 +1,7 @@
 "use strict";
 
 chrome.sessions.getDevices({}, function(sessions){
+
   for (var i in sessions) {
     var device = sessions[i];
     var deviceDiv = document.createElement("div");
@@ -10,6 +11,9 @@ chrome.sessions.getDevices({}, function(sessions){
     deviceName.innerHTML = device.deviceName;
     deviceName.classList.add("device-name");
     deviceDiv.appendChild(deviceName);
+
+    var sessionsDiv = document.createElement("div");
+    sessionsDiv.classList.add("sessions");
 
     for (var j in device.sessions) {
     var session = device.sessions[j];
@@ -29,8 +33,10 @@ chrome.sessions.getDevices({}, function(sessions){
         sessionDiv.appendChild(link);
       }
 
-      deviceDiv.appendChild(sessionDiv);
+      sessionsDiv.appendChild(sessionDiv);
     }
+
+    deviceDiv.appendChild(sessionsDiv);
 
     document.getElementById("main").appendChild(deviceDiv);
   }
