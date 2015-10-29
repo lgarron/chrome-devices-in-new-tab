@@ -8,7 +8,7 @@ chrome.sessions.getDevices({}, function(sessions){
     deviceDiv.classList.add("device");
 
     var deviceName = document.createElement("div");
-    deviceName.innerHTML = device.deviceName;
+    deviceName.textContent = device.deviceName;
     deviceName.classList.add("device-name");
     deviceDiv.appendChild(deviceName);
 
@@ -26,7 +26,7 @@ chrome.sessions.getDevices({}, function(sessions){
 
         var link = document.createElement("a");
         link.href = tab.url;
-        link.innerHTML = tab.title;
+        link.textContent = tab.title;
         link.title = tab.title;
         link.classList.add("link");
 
